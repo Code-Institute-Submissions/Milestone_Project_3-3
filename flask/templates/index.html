@@ -1,12 +1,33 @@
-{% extends 'base.html' %}
-{% block content %}
-            <header class="masthead">
-            <div class="container d-flex h-100 align-items-center">
+{% extends 'base.html' %} {% block content %}
+<header class="masthead">
+	<div class="container d-flex h-100 align-items-center">
+            <div class="col-12">
                 <div class="mx-auto text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">Best Recipe Book</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">A Free food recepie book, check it out.</h2>
-                    <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+                    <h1 class="mx-auto my-0 text-uppercase">
+                        Find Your Favorite Dish Recipe
+                    </h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">
+                        Register or use our search bar to look for recipes.
+                    </h2>
+                </div>
+                <div class="col-md-10 col-lg-8 mx-auto text-center">
+                    <form class="form-inline d-flex">
+                        <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="text" placeholder="Enter your dish name...">
+                        <button class="btn btn-primary mx-auto text-capitalize" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
-        </header>
+			
+	</div>
+</header>
+<!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-5">Find some of the World's tastiest food recipes.</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
 {% endblock %}
