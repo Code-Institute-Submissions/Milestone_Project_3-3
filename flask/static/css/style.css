@@ -10434,6 +10434,14 @@ body {
     height: 100%;
     content: "";
 }
+/* User Comments Section */
+
+
+.user-img-size {
+    max-height: 10rem;
+}
+
+
 /* Text Color Class */
 
 .text-jet {
