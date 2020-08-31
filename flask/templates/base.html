@@ -1,86 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe Pot</title>
-    <link
-      rel="shortcut icon"
-      href="{{ url_for('static', filename='/assets/img/favicon.ico') }}"
-      type="image/x-icon"
-    />
-
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--Bootstrap CDN-->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <!--Static CSS-->
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='/css/style.css') }}"
-    />
-    <!-- Google fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Varela+Round"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-      rel="stylesheet"
-    />
-  </head>
-  <body id="page-top">
-	<!-- Navigation-->
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="fas fa-carrot"></i> Recipe Pot</a>
-			<button
-	          class="navbar-toggler navbar-toggler-right"
-	          type="button"
-	          data-toggle="collapse"
-	          data-target="#navbarResponsive"
-	          aria-controls="navbarResponsive"
-	          aria-expanded="false"
-	          aria-label="Toggle navigation"
-	        >
-	          Menu
-	          <i class="fas fa-bars"></i>
-	        </button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Recipes</a></li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">
-							About
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">About</a>
-							<a class="dropdown-item" href="#">Contact Us</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a class="btn btn-sm btn-primary text-capitalize nav-btn" href="#" role="button">Sign In</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-    {% block content %} {% endblock %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-  </body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Recipe Pot</title>
+      <link
+         rel="shortcut icon"
+         href="{{ url_for('static', filename='/assets/img/favicon.ico') }}"
+         type="image/x-icon"
+         />
+      <!-- Font Awesome icons (free version)-->
+      <script
+         src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+         crossorigin="anonymous"
+         ></script>
+      <!--Bootstrap CDN-->
+      <link
+         rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+         crossorigin="anonymous"
+         />
+      <!--Static CSS-->
+      <link
+         rel="stylesheet"
+         href="{{ url_for('static', filename='/css/style.css') }}"
+         />
+      <!-- Google fonts-->
+      <link
+         href="https://fonts.googleapis.com/css?family=Varela+Round"
+         rel="stylesheet"
+         />
+      <link
+         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+         rel="stylesheet"
+         />
+   </head>
+   <body id="page-top">
+      <!-- Navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+         <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="fas fa-carrot"></i> Recipe Pot</a>
+            <button
+               class="navbar-toggler navbar-toggler-right"
+               type="button"
+               data-toggle="collapse"
+               data-target="#navbarResponsive"
+               aria-controls="navbarResponsive"
+               aria-expanded="false"
+               aria-label="Toggle navigation"
+               >
+            Menu
+            <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Recipes</a></li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                     About
+                     </a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">About</a>
+                        <a class="dropdown-item" href="#">Contact Us</a>
+                     </div>
+                  </li>
+                  <li class="nav-item">
+                     <a class="btn btn-sm btn-primary text-capitalize nav-btn" href="#" role="button">Sign In</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      {% block content %} {% endblock %}
+      <footer class="footer small">
+         <div class="container">
+            <div class="row">
+               <div class="col-12 col-lg-6 text-center text-lg-center">
+                  <div class="row">
+                     <div class="col-12">
+                        <ul class="list-style-none p-0 justify-content-center">
+                           <li><a href="" class="text-gainsboro">About</a></li>
+                           <li><a href="" class="text-gainsboro ml-4">Contact</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="d-none d-lg-block col-12">
+                        <p class="text-gainsboro">© Nemanja Manojlovic 2020. All Rights Reserved.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6">
+                  <ul class="list-style-none p-0 mt-2 mt-lg-0 justify-content-center footer-ul--font-size">
+                     <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+                     <li><a href=""><i class="fab fa-twitter-square ml-4"></i></a></li>
+                     <li><a href=""><i class="fab fa-instagram-square ml-4"></i></a></li>
+                  </ul>
+               </div>
+               <div class="d-block d-lg-none col-12 text-center">
+                  <p class="text-gainsboro mt-4">© Nemanja Manojlovic 2020. All Rights Reserved.</p>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+      <!-- Third party plugin JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <!-- Core theme JS-->
+      <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+   </body>
 </html>

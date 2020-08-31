@@ -10305,7 +10305,7 @@ body {
 
 .signup-section {
   padding: 10rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%), url("../assets/img/bg-signup.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 85%, #FD7E72 99%), url("../assets/img/bg-signup.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10323,9 +10323,14 @@ body {
   border: 0;
 }
 
-.contact-section {
+.user-reviews-section--color {
   background: #FD7E72;
 }
+
+.contact-section{
+padding-top: 3rem;
+}
+
 .contact-section .card {
   border: 0;
   border-bottom: 0.25rem solid #64a19d;
@@ -10362,6 +10367,7 @@ body {
 
 .footer {
   padding: 5rem 0;
+  background: #FD7E72;
 }
 
 /* Nav CSS Overwritting Template Class*/
@@ -10448,6 +10454,18 @@ body {
   color: #3C3C3C;
 }
 
-.text-gainsboro{
+.text-gainsboro {
     color: #E0E0E0;
+}
+
+/* Footer */
+
+.list-style-none {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.footer-ul--font-size {
+    font-size: 2.5rem;
 }
