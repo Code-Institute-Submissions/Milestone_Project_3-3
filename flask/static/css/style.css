@@ -10406,7 +10406,7 @@ padding-top: 3rem;
 }
 }
 
-/* Landing Page About Section */
+/* Landing Page's About Section */
 
 .about-hr--color {
   border-color: #64a19d;
@@ -10468,4 +10468,54 @@ padding-top: 3rem;
 
 .footer-ul--font-size {
     font-size: 2.5rem;
+}
+
+/* About Page */
+
+.question-section {
+    padding-top: 3rem;
+    background: #F5F5F5;
+    padding-bottom: 3rem;
+}
+
+.question-section .container .row .col-12 h2 {
+    font-size: 3.5rem;
+}
+
+/* Contact Page */
+
+.contact-form-input--style {
+    box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+    padding: 1.25rem 2rem;
+    height: auto;
+    font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 80%;
+    text-transform: capitalize;
+    letter-spacing: 0.15rem;
+    border: 0;
+}
+
+.form-row {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.form-section-background--color {
+    background: #F5F5F5;
+}
+
+.contact-form-text{
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    max-height: 19rem;
+    height: 18rem; 
+    resize: none;
+    
 }

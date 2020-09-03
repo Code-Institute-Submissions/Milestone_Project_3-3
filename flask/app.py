@@ -16,6 +16,11 @@ def about_page():
     return render_template('about.html')
 
 
+@app.route('/contact_us/')
+def contact_page():
+    return render_template('contact.html')
+
+
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'),
             port=int(os.getenv('PORT')),
