@@ -1,7 +1,7 @@
 $("form[name=signup_form]").submit(function(event) {
     let $form = $(this);
-    let $error = $(".error")
-    let $error_p = $(".error p")
+    let $error = $(".error");
+    let $error_p = $(".error p");
     let data = $form.serialize();
 
     $.ajax({
@@ -10,12 +10,13 @@ $("form[name=signup_form]").submit(function(event) {
         data: data,
         dataType: "json",
         success:    function(resp) {
-            console.log(resp);
+            // Getting the Current Page URL and setting it to "/dashboard/"
+            window.location.href = "/profile_page/";
         },
         error:  function(resp) {
-            console.log(resp)
-            $error_p.text(resp.responseJSON.error)
-            $error.removeClass("d-none")
+            console.log(resp);
+            $error_p.text(resp.responseJSON.error);
+            $error.removeClass("d-none");
         }
     });
     //Preventing Default onSubmit Action
