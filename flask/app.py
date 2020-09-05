@@ -1,7 +1,8 @@
 import os
-from flask import Flask, render_template, jsonify, request, session
+from flask import Flask, render_template, jsonify, request, session, redirect, url_for
 from flask_pymongo import PyMongo
 from passlib.hash import pbkdf2_sha256
+from functools import wraps
 import uuid
 
 # Flask App
@@ -14,6 +15,7 @@ class User:
     
 
     def start_session(self, user):
+        del user['password']
         session['logged_in'] = True
         session['user'] = user
         
@@ -24,8 +26,8 @@ class User:
         # Create the User Object
         user = {
             '_id': uuid.uuid4().hex,
-            'name': request.form.get('name'),
-            'email': request.form.get('email'),
+            'name': request.form.get('name').lower(),
+            'email': request.form.get('email').lower(),
             'password': request.form.get('password')
         }
 
@@ -33,13 +35,18 @@ class User:
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
 
         # Check for existing email adress
-        if users.find_one({'email': user['email']}):
+        if users.find_one({'email': user['email'].lower()}):
             return jsonify({'error': 'Email adress already in use'}), 400
 
         if users.insert_one(user):
             return self.start_session(user)
 
         return jsonify({"error": "Signup_failed"}), 400
+
+    def signout(self):
+        session.clear()
+        return redirect(url_for('home_page'))
+
 
 
 # Database
@@ -48,6 +55,18 @@ app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 
 mongo = PyMongo(app)
 users = mongo.db.user_login_system
+
+
+# Decorators
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            return redirect(url_for('home_page'))
+        
+    return wrap
 
 
 # Routes
@@ -78,8 +97,15 @@ def signup():
     return user.signup()
 
 @app.route('/profile_page/')
+@login_required
 def profile_page():
     return render_template('profile.html')
+
+
+@app.route('/profile_page/signout')
+def sign_out():
+    user = User()
+    return user.signout()
 
 
 if __name__ == '__main__':

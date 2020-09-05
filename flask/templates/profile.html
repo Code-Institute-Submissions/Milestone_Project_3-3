@@ -1,6 +1,18 @@
-{% extends 'base.html' %}
+{% extends 'userbase.html' %}
 {% block content %}
-
-<h1>Profile Page</h1>
-
+<!-- Hero-->
+<header class="masthead">
+   <div class="container d-flex h-100 align-items-center">
+      <div class="col-12">
+         <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">
+                Welcome {{ session['user']['name'] }}
+            </h1>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5">
+               Bellow you can find all of your recipes.
+            </h2>
+         </div>
+      </div>
+   </div>
+</header>
 {% endblock %}
