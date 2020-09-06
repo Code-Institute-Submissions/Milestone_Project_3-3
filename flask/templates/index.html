@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 <!-- Hero-->
 <header class="masthead">
    <div class="container d-flex h-100 align-items-center">
@@ -16,6 +17,15 @@
                <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="text" placeholder="Enter your dish name...">
                <button class="btn btn-primary mx-auto text-capitalize" type="submit">Search</button>
             </form>
+         </div>
+         <div class="col-12">
+			<div class="mx-auto text-center">
+				<div class="scroll-downs">
+					<div class="mousey">
+						<div class="scroller"></div>
+					</div>
+				</div>
+            </div>
          </div>
       </div>
    </div>
@@ -144,17 +154,17 @@
       </div>
       <div class="row">
          <div class="col-12 col-lg-4 text-center">
-            <img class="rounded-circle img-fluid mb-3 mb-lg-5 user-img-size" src="{{ url_for('static', filename='/assets/img/user-1.jpg') }}" alt="Photo of a smiling black-haired girl with black eyes.">
+            <img class="shadow rounded-circle img-fluid mb-3 mb-lg-5 user-img-size" src="{{ url_for('static', filename='/assets/img/user-1.jpg') }}" alt="Photo of a smiling black-haired girl with black eyes.">
             <p class="text-gainsboro">Margaret E.</p>
             <p class="text-gainsboro mb-5 mb-lg-2">"This is fantastic! Thanks so much guys!"</p>
          </div>
          <div class="col-12 col-lg-4 text-center">
-            <img class="rounded-circle img-fluid mb-3 mb-lg-5 user-img-size" src="{{ url_for('static', filename='/assets/img/user-2.jpg') }}" alt="Photo of a smiling blond-haired girl with blue eyes.">
+            <img class="shadow rounded-circle img-fluid mb-3 mb-lg-5 user-img-size" src="{{ url_for('static', filename='/assets/img/user-2.jpg') }}" alt="Photo of a smiling blond-haired girl with blue eyes.">
             <p class="text-gainsboro">Sarah W.</p>
             <p class="text-gainsboro mb-5">"Thanks so much for making these free resources available to us!"</p>
          </div>
          <div class="col-12 col-lg-4 text-center">
-            <img class="img-fluid rounded-circle mb-3 mb-lg-5 user-img-size" src="{{ url_for('static', filename='/assets/img/user-3.jpg') }}" alt="Photo of a smiling man with a blue suit and black hair.">
+            <img class="shadow img-fluid rounded-circle mb-3 mb-lg-5 user-img-size" src="{{ url_for('static', filename='/assets/img/user-3.jpg') }}" alt="Photo of a smiling man with a blue suit and black hair.">
             <p class="text-gainsboro">Fred S.</p>
             <p class="text-gainsboro mb-5">"Recipe Pot is amazing. I've been using it to create lots of super nice dish recipes"</p>
          </div>

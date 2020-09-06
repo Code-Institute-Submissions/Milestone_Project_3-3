@@ -11,8 +11,18 @@
 						Sign Up and find out what Recipe Pot has to offer.
 					</h2>
 				</div>
+				<div class="col-12">
+					<div class="mx-auto text-center">
+						<div class="scroll-downs">
+							<div class="mousey">
+								<div class="scroller"></div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+        
 	</header>
 	<section class="form-section-background--color">
 		<div class="container">
@@ -37,6 +47,9 @@
 				</div>
                 <div class="error form-group col-12 mt-4 text-center d-none">
                     <p class="text-danger error-text"></p>
+                </div>
+                <div class="form-group col-12 mt-4 text-center">
+                    <p class="text-blue">Do you already have an account? <a href="{{ url_for('login_page') }}">Log In</a></p>
                 </div>
 				<div class="form-group col-12 mt-4 text-center">
 					<button class="btn btn-primary" type="submit">Sign Up</button>
