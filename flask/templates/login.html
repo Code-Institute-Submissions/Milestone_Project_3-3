@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
+
 {% block content %}
-	<header class="masthead">
+<header class="masthead">
 		<div class="container d-flex h-100 align-items-center">
 			<div class="col-12">
 				<div class="mx-auto text-center">
 					<h1 class="mx-auto my-0 text-uppercase">
-						Sign Up
+						Log in
 					</h1>
 					<h2 class="text-white-50 mx-auto mt-2 mb-5">
-						Sign Up and find out what Recipe Pot has to offer.
+						Log in and find out what Recipe Pot has to offer.
 					</h2>
 				</div>
 			</div>
@@ -18,15 +19,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12 text-center pt-5">
-					<h3 class="text-jet mb-4">Create An Account</h3>
+					<h3 class="text-jet mb-4">Login To Your Account</h3>
 					<hr class="about-hr--color">
 				</div>
 			</div>
-			<form id="signup_form" name="signup_form" class="form-row">
-				<div class="form-group col-12 text-center">
-					<label for="name" class="text-jet">Full Name</label>
-					<input class="contact-form-input form-control contact-form-input--style" type="text" id="name" name="name" placeholder="Your full name" required />
-	            </div>
+			<form id="login_form" name="login_form" class="form-row">
 				<div class="form-group col-12 mt-4 text-center">
 					<label for="email" class="text-jet">Email Adress</label>
 					<input class="contact-form-input form-control contact-form-input--style" type="email" id="email" name="email" placeholder="Email@hotmail.com" required>
@@ -39,11 +36,12 @@
                     <p class="text-danger error-text"></p>
                 </div>
 				<div class="form-group col-12 mt-4 text-center">
-					<button class="btn btn-primary" type="submit">Sign Up</button>
+					<button class="btn btn-primary" type="submit">Log In</button>
 				</div>
 			</form>
 		</div>
 	</section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
+
 {% endblock %}

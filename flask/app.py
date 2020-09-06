@@ -47,6 +47,14 @@ class User:
         session.clear()
         return redirect(url_for('home_page'))
 
+    def login(self):
+        email = request.form.get('email').lower()
+        user = users.find_one({'email': email})
+
+        if user and pbkdf2_sha256.verify(request.form.get('password'), user['password']):
+            return self.start_session(user)
+        
+        return jsonify({'error': 'Invalid login credentials'}), 401
 
 
 # Database
@@ -95,6 +103,16 @@ def signup_page():
 def signup():
     user = User()
     return user.signup()
+
+
+@app.route('/login/')
+def login_page():
+    return render_template('login.html')
+
+@app.route('/user/login', methods=['POST'])
+def login():
+    user = User()
+    return user.login()
 
 @app.route('/profile_page/')
 @login_required
