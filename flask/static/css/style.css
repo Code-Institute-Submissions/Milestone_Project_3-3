@@ -10482,6 +10482,12 @@ padding-top: 3rem;
     font-size: 3.5rem;
 }
 
+.signup-about-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background: #F5F5F5;
+}
+
 /* Contact Page */
 
 .contact-form-input--style {
