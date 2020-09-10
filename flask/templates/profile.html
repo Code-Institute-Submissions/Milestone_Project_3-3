@@ -26,29 +26,58 @@
 </header>
 <section class="recipe-section">
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row cards">
+            <!-- Recipe Card -->
 			<div class="col-3">
-				<!-- Recipe Card -->
-				<div class="cards">
-					<div class="card">
-							<img class="card-img-top" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
-							<div class="card-body">
-								<a href="#" class="card-title toggle-info btn">
-									<span class="left"></span>
-									<span class="right"></span>
-								</a>
-								<h2 class="card-title">Card title</h2>
-                                <div class="card-text card-flap">
-									<p>This grid is an attempt to make something nice that works on touch devices. Ignoring
-										hover states when
-										they're not available etc.</p>
-                                    <a href="#" class="btn btn-primary mx-auto text-capitalize text-white">Read more</a>
-                                </div>
-							</div>
+				<div class="card">
+					<img class="card-img-top" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
+					<div class="card-body">
+						<a href="#" class="card-title toggle-info btn">
+							<span class="left"></span>
+							<span class="right"></span>
+						</a>
+						<h2 class="card-title mb-0">Card title</h2>
+                        <hr class="card-title">
+                        <div class="card-title">
+                            <div class="row">
+                            <div class="col-4 text-center">
+                                ing
+                            </div>
+                            <div class="col-8 text-center">
+                                made by
+                            </div>
+                            </div>
+                        </div>
+						<div class="card-text card-flap">
+							<p>This grid is an attempt to make something nice that works on touch devices. Ignoring
+								hover states when
+								they're not available etc.</p>
+							<a href="#" class="btn btn-primary w-100 text-capitalize text-white">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="col-3">
+				<div class="card">
+					<img class="card-img-top" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
+					<div class="card-body">
+						<a href="#" class="card-title toggle-info btn">
+							<span class="left"></span>
+							<span class="right"></span>
+						</a>
+						<h2 class="card-title mb-0">Card title</h2>
+						<div class="card-text card-flap">
+							<p>This grid is an attempt to make something nice that works on touch devices. Ignoring
+								hover states when
+								they're not available etc.</p>
+							<a href="#" class="btn btn-primary mx-auto text-capitalize text-white">Read more</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/cardsjs.js') }}"></script>
 {% endblock %}

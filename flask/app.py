@@ -95,6 +95,7 @@ def prevent_misuse(f):
 # Routes
 @app.route('/')
 @app.route('/home/')
+@prevent_misuse
 def home_page():
     return render_template('index.html')
 

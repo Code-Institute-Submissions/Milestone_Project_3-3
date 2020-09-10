@@ -10571,6 +10571,11 @@ padding-top: 3rem;
     background: #F5F5F5;
 }
 
+div.card {
+    z-index: 1;
+    transition: all 0.3s 0s ease-in;
+}
+
 a.toggle-info {
     border-radius: 2.3rem;
     height: 2.3rem;
@@ -10601,18 +10606,85 @@ a.toggle-info span.right {
     transform: rotate(45deg);
 }
 
-.card-flap {
+/* .card-flap {
     background: darken(#ffffff, 15);
     position: absolute;
     width: 100%;
     transform-origin: top;
     transform: rotateX(-90deg);
     transition: all 0.3s 0.3s ease-out;
-    z-index: -1;
+} */
+
+.card-flap {
+    max-height: 0;
+    overflow: hidden;
+    transform-origin: top;
+    transition: max-height 0.3s ease-out;
 }
 
-div.cards.showing {
+div.card-flap > p {
+    opacity: 0;
+    transition: opacity .7s ease-out;
+}
+
+div.card-flap > a {
+    opacity: 0;
+    transition: opacity .7s ease-out;
+}
+
+div.row.cards.showing > div.col-3 > div.card {
     cursor: pointer;
     opacity: 0.6;
     transform: scale(0.88);
+}
+
+div.row.cards.showing > div.col-3 > div.card:hover {
+    opacity: 0.94;
+    transform: scale(0.92);
+  }
+
+div.row.cards.showing > div.col-3 > div.card.show {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+div.row.cards.showing > div.col-3 
+> div.card.show > div.card-body > a.toggle-info > span {
+    top: 1rem;
+}
+
+div.row.cards.showing > div.col-3 
+> div.card.show > div.card-body > a.toggle-info {
+    background: #FD7E72;
+}
+
+div.row.cards.showing > div.col-3 
+> div.card.show > div.card-body > a.toggle-info > span.left {
+    right: 0.65rem;
+}
+
+div.row.cards.showing > div.col-3 
+> div.card.show > div.card-body > a.toggle-info > span.right {
+    left: 0.65rem;
+}
+
+div.row.cards.showing > div.col-3 
+> div.card.show > div.card-body > div.card-flap {
+    max-height: 30rem;
+    overflow: visible;
+    transform-origin: top;
+    transition: max-height 0.5s ease-in;
+}
+
+div.row.cards.showing > div.col-3 
+> div.card.show > div.card-body > div.card-flap > p {
+    opacity: 1;
+    transition: opacity .75s ease-in;
+}
+
+div.row.cards.showing > div.col-3 
+> div.card.show > div.card-body > div.card-flap > a {
+    opacity: 1;
+    transition: opacity .8s ease-in;
+    
 }
