@@ -10576,6 +10576,11 @@ div.card {
     transition: all 0.3s 0s ease-in;
 }
 
+.recipe-hr--color{
+    background: #64a19d;
+    height: 0.15rem;
+}
+
 a.toggle-info {
     border-radius: 2.3rem;
     height: 2.3rem;
@@ -10687,4 +10692,62 @@ div.row.cards.showing > div.col-3
     opacity: 1;
     transition: opacity .8s ease-in;
     
+}
+
+.add-recipe-card--bg-color {
+    background-color:rgba(0, 0, 0, 0.1);
+    transition: background-color .3s ease-in;
+}
+
+.add-recipe-card-hover--bg-color {
+    background-color: rgb(100,161,157);
+    cursor: pointer;
+    transition: background-color .3s ease-out;
+}
+
+.add-recipe-btn--size {
+    font-size: 6rem;
+}
+
+.add-recipe-btn-hover--color {
+    color: #F5F5F5;
+    transition: color .3s ease-in;
+}
+
+/* CRUD Recipe Form Pages */
+
+.new-ingredient-btn {
+    font-size: 3rem;
+    color: #64a19d;
+}
+
+.new-ingredient-btn:hover{
+    color: #548b87;
+    cursor: pointer;
+}
+
+.recipe-form-text {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgb(73, 80, 87);
+    background-color: rgb(255, 255, 255);
+    background-clip: padding-box;
+    max-height: 19rem;
+    height: 8rem;
+    resize: none;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.recipe-form-input--style {
+        box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+    padding: 1.25rem 2rem;
+    height: auto;
+    font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 80%;
+    letter-spacing: 0.15rem;
+    border: 0;
+
 }

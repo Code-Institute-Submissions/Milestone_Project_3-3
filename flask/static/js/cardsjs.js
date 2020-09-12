@@ -1,4 +1,6 @@
 $('document').ready(function (){
+    
+    // Recipe Card Animation
     let $cards = $('div.row.cards');
     let $card = $('.card');
     let zindex = 10;
@@ -29,4 +31,24 @@ $('document').ready(function (){
             $(this).css({zIndex: zindex}).addClass('show');
         };
     });
+
+    let $add_recipe = $('#add_recipe');
+    let $add_recipe_btn = $('#add_recipe_btn');
+
+    $add_recipe.hover(function(){
+        $add_recipe.removeClass('add-recipe-card--bg-color');
+        
+        $add_recipe_btn.addClass('add-recipe-btn-hover--color');
+        $add_recipe.addClass('add-recipe-card-hover--bg-color');
+        }, function(){
+        $add_recipe.removeClass('add-recipe-card-hover--bg-color');
+        $add_recipe_btn.removeClass('add-recipe-btn-hover--color');
+        
+        $add_recipe.addClass('add-recipe-card--bg-color');
+    });
+
+    $add_recipe.click(function(){
+        window.location.href = "/add_recipe/";
+    })
+
 });
