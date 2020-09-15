@@ -33,7 +33,7 @@ class User:
         }
 
         # Encrypt the password
-        user['password'] = pbkdf2_sha256.encrypt(user['password'])
+        user['password'] = pbkdf2_sha256.hash(user['password'])
 
         # Check for existing email adress
         if users.find_one({'email': user['email'].lower()}):
