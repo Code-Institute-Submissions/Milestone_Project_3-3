@@ -28,15 +28,18 @@
 	<div class="container-fluid">
 		<div class="row cards">
             <!-- Recipe Card -->
+            {% for recipe in user_recipes %}
 			<div class="col-3">
 				<div class="card">
-					<img class="card-img-top" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
+                    <div class="card-image-holder">
+					    <img class="card-img-top card-img" src="{{ recipe.img_url }}" alt="wave" />
+                    </div>
 					<div class="card-body pb-0">
 						<a href="#" class="card-title toggle-info btn">
 							<span class="left"></span>
 							<span class="right"></span>
 						</a>
-						<h2 class="card-title mb-0">Card title</h2>
+						<h2 class="card-title mb-0">{{ recipe.recipe_name }}</h2>
                         <hr class="card-title recipe-hr--color">
                         <div class="card-title">
                             <div class="row">
@@ -44,19 +47,18 @@
                                 Ingredients:<br><i class="fas fa-carrot"></i>
                             </div>
                             <div class="col-8 text-center">
-                                Created by:
+                                Created by: {{ session['user']['name'] }}
                             </div>
                             </div>
                         </div>
 						<div class="card-text card-flap">
-							<p>This grid is an attempt to make something nice that works on touch devices. Ignoring
-								hover states when
-								they're not available etc.</p>
+							<p>{{ recipe.step_description[0] }}</p>
 							<a href="#" class="btn btn-primary w-100 mb-4 text-capitalize text-white">Read more</a>
 						</div>
 					</div>
 				</div>
 			</div>
+            {% endfor %}
             <div class="col-3 d-flex align-items-center add-recipe-card--bg-color" id="add_recipe">
 				<a href="{{ url_for('add_recipe') }}" class="mx-auto" id="add_recipe_btn"><i class="fas fa-plus-circle add-recipe-btn--size"></i></a> 
 			</div>

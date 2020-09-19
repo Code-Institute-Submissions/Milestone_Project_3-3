@@ -60,6 +60,21 @@ class User:
 
         return jsonify({'error': 'Invalid login credentials'}), 401
 
+    def insert_recipe(self):
+        recipe = {
+            'user_id': session['user']['_id'],
+            'recipe_name': request.form.get('recipe_name').lower(),
+            'img_url': request.form.get('img_url'),
+            'ingredient_name': request.form.getlist('ingredient_name'),
+            'ingredient_amount': request.form.getlist('ingredient_amout'),
+            'unit': request.form.getlist('unit'),
+            'step_description': request.form.getlist('step_description')
+        }
+
+        recipes.insert_one(recipe)
+
+        return jsonify({'success': 'Recipe has been added'}), 200
+
 
 # Database
 app.config['MONGO_DBNAME'] = 'Recipe_Pot'
@@ -67,6 +82,7 @@ app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 
 mongo = PyMongo(app)
 users = mongo.db.user_login_system
+recipes = mongo.db.recipes
 
 
 # Decorators
@@ -139,7 +155,9 @@ def login():
 @app.route('/profile_page/')
 @login_required
 def profile_page():
-    return render_template('profile.html')
+    return render_template('profile.html',
+                           user_recipes=recipes.find({
+                               'user_id': session['user']['_id']}))
 
 
 @app.route('/profile_page/signout')
@@ -151,6 +169,12 @@ def sign_out():
 @app.route('/add_recipe/')
 def add_recipe():
     return render_template('add_recipe.html')
+
+
+@app.route('/add_recipe/insert_recipe', methods=['GET', 'POST'])
+def insert_recipe():
+    user = User()
+    return user.insert_recipe()
 
 
 if __name__ == '__main__':

@@ -39,13 +39,30 @@ $("document").ready(function(){
     $("#step-action-container").before(stepTemplateCopy);
     });
 
-    $("#del-step").click(function(e){
+    $("#del-step").click(function(e) {
         let divClass = ".remove" + desCount;
         $(divClass).remove();
         desCount--;
         if (desCount == 1){
         $("#del-step").addClass("display-none");
         }
+    });
+
+    $("form[name=add-recipe]").submit(function(event) {
+        let data = $("#add-recipe").serialize();
+        
+        $.ajax({
+            url: "/add_recipe/insert_recipe",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success:     function(resp) {
+                // Getting the Current Page URL and setting it to "/profile_page/"
+                console.log(resp)
+            }
+        });
+
+        event.preventDefault();
     });
 });
 

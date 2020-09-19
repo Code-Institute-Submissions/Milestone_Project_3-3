@@ -10574,6 +10574,17 @@ padding-top: 3rem;
 div.card {
     z-index: 1;
     transition: all 0.3s 0s ease-in;
+    max-width: 18.75rem;
+}
+
+.card-image-holder {
+    background: rgba(0,0,0,0.1);
+    height: 0;
+    padding-bottom: 75%;
+}
+
+.card-img {
+    max-width: 18.75rem;
 }
 
 .recipe-hr--color{
@@ -10610,15 +10621,6 @@ a.toggle-info span.right {
     left: 0.375rem;
     transform: rotate(45deg);
 }
-
-/* .card-flap {
-    background: darken(#ffffff, 15);
-    position: absolute;
-    width: 100%;
-    transform-origin: top;
-    transform: rotateX(-90deg);
-    transition: all 0.3s 0.3s ease-out;
-} */
 
 .card-flap {
     max-height: 0;
