@@ -5,6 +5,7 @@ from flask_pymongo import PyMongo
 from passlib.hash import pbkdf2_sha256
 from functools import wraps
 import uuid
+from bson.objectid import ObjectId
 
 # Flask App
 
@@ -175,6 +176,16 @@ def add_recipe():
 def insert_recipe():
     user = User()
     return user.insert_recipe()
+
+
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    recipe = recipes.find_one({'_id': ObjectId(recipe_id)})
+    ingredients = zip(recipe['ingredient_name'],
+                      recipe['ingredient_amount'],
+                      recipe['unit'])
+    return render_template('edit_recipe.html', user_recipe=recipe,
+                           user_ingredient=ingredients)
 
 
 if __name__ == '__main__':

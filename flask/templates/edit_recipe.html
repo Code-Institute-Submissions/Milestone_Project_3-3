@@ -1,14 +1,13 @@
 {% extends 'base.html' %} {% block content %}
-<!-- Hero-->
 <header class="masthead">
   <div class="container d-flex h-100 align-items-center">
     <div class="col-12">
       <div class="mx-auto text-center">
         <h1 class="mx-auto my-0 text-uppercase">
-          Create New Recipe
+          Edit your recipe
         </h1>
         <h2 class="text-white-50 mx-auto mt-2 mb-5">
-          Use the form bellow to create your recipe.
+          Use the form below to select and edit your recipe.
         </h2>
       </div>
       <div class="col-12">
@@ -24,10 +23,10 @@
   </div>
 </header>
 <section class="form-section-background--color">
-  <div class="container">
+<div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h3 class="text-center pt-5 mb-4 text-jet">Add Recipe</h3>
+        <h3 class="text-center pt-5 mb-4 text-jet">Edit Recipe</h3>
         <hr class="about-hr--color" />
       </div>
       <div class="col-12">
@@ -43,6 +42,7 @@
                 id="recipe_name"
                 name="recipe_name"
                 placeholder="Your recipe name"
+                value="{{user_recipe.recipe_name}}"
                 required
               />
             </div>
@@ -58,6 +58,7 @@
                 id="img_url"
                 name="img_url"
                 placeholder="Paste image URL here"
+                value="{{user_recipe.img_url}}"
                 required
               />
             </div>
@@ -66,12 +67,13 @@
             <div class="col-12">
               <label for="email" class="text-jet">Ingredients</label>
             </div>
+            {% for ingredient in user_ingredient %}
             <div class="col-1 d-flex align-items-center">
-              <p class="mx-auto my-auto">1.</p>
+              <p class="mx-auto my-auto">{{loop.index}}.</p>
             </div>
             <div class="col-11">
               <div class="row">
-                <div class="col-lg-8 col-12">
+                <div class="col-lg-8 col-12 mt-3 mt-sm-2">
                   <input
                     class="contact-form-input form-control contact-form-input--style"
                     type="text"
@@ -79,9 +81,10 @@
                     name="ingredient_name"
                     placeholder="ingredient name"
                     required
+                    value="{{ingredient[0]}}"
                   />
                 </div>
-                <div class="col-6 col-lg-2 mt-3 mt-lg-0 mx-auto">
+                <div class="col-6 col-lg-2 mt-3 mt-lg-0 mx-auto mt-3 mt-sm-2">
                   <input
                     class="contact-form-input form-control contact-form-input--style"
                     type="text"
@@ -89,13 +92,15 @@
                     name="ingredient_amout"
                     placeholder="amount"
                     required
+                    value="{{ingredient[1]}}"
                   />
                 </div>
-                <div class="col-6 col-lg-2 mt-3 mt-lg-0 mx-auto">
+                <div class="col-6 col-lg-2 mt-3 mt-lg-0 mx-auto mt-3 mt-sm-2">
                   <select
                     name="unit"
                     id="unit"
                     class="form-control recipe-form-input--style"
+                    value="{{ingredient[2]}}"
                   >
                     <option value="g">g</option>
                     <option value="kg">kg</option>
@@ -106,6 +111,7 @@
                 </div>
               </div>
             </div>
+            {% endfor %}
             <div class="col-12" id="ingredient-action-container">
               <div class="row d-flex justify-content-center">
                 <div
@@ -127,18 +133,20 @@
             <div class="col-12">
               <label for="text" class="text-jet">Steps</label>
             </div>
-            <div class="col-1 d-flex align-items-center">
-              <p class="mx-auto">1.</p>
+            {% for step in user_recipe.step_description %}
+            <div class="col-1 d-flex align-items-center mt-3 mt-sm-2">
+              <p class="mx-auto">{{loop.index}}.</p>
             </div>
-            <div class="col-11">
+            <div class="col-11 mt-3 mt-sm-2">
               <textarea
                 class="recipe-form-text recipe-form-input--style"
                 id="step_description"
                 name="step_description"
                 placeholder="Step Description"
                 required
-              ></textarea>
+              >{{step}}</textarea>
             </div>
+            {% endfor %}
             <div class="col-12" id="step-action-container">
               <div class="row d-flex justify-content-center">
                 <div id="del-step" class="delete-ingredient-btn display-none">
@@ -161,56 +169,4 @@
     </div>
   </div>
 </section>
-<template id="ingredient-template">
-  <div class="col-1 d-flex align-items-center">
-    <p class="mx-auto my-auto">1.</p>
-  </div>
-  <div class="col-11">
-    <div class="row">
-      <div class="col-12 col-sm-8 mt-3 mt-sm-2">
-        <input
-          class="contact-form-input form-control contact-form-input--style"
-          type="text"
-          name="ingredient_name"
-          placeholder="ingredient name"
-          required
-        />
-      </div>
-      <div class="col-6 col-sm-2 mt-3 mt-sm-2">
-        <input
-          class="contact-form-input form-control contact-form-input--style"
-          type="text"
-          name="ingredient_amout"
-          placeholder="amount"
-          required
-        />
-      </div>
-      <div class="col-6 col-sm-2 mt-3 mt-sm-2">
-        <select name="unit" class="form-control recipe-form-input--style">
-          <option value="g">g</option>
-          <option value="kg">kg</option>
-          <option value="ml">ml</option>
-          <option value="dl">dl</option>
-          <option value="l">l</option>
-        </select>
-      </div>
-    </div>
-  </div>
-</template>
-<template id="step-template">
-  <div class="col-1 d-flex align-items-center mt-3 mt-sm-2">
-    <p class="mx-auto">1.</p>
-  </div>
-  <div class="col-11 mt-3 mt-sm-2">
-    <textarea
-      class="recipe-form-text recipe-form-input--style"
-      name="step_description"
-      placeholder="Step Description"
-      required
-    ></textarea>
-  </div>
-</template>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{ url_for('static', filename='js/recipeCRUD.js') }}"></script>
 {% endblock %}

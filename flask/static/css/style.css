@@ -10238,7 +10238,7 @@ body {
   font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 2.5rem;
   line-height: 3rem;
-  letter-spacing: 0.8rem;
+  letter-spacing: 0.1rem;
   background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -10264,7 +10264,7 @@ body {
   .masthead h1 {
     font-size: 4.5rem;
     line-height: 5.6rem;
-    letter-spacing: 0.4rem;
+    letter-spacing: 0.65rem;
   }
   .masthead h2 {
     max-width: 30rem;
@@ -10458,6 +10458,10 @@ padding-top: 3rem;
     color: #E0E0E0;
 }
 
+.bg-color-salamon {
+    background-color: #FD7E72;
+}
+
 /* Footer */
 
 .list-style-none {
@@ -10565,31 +10569,25 @@ padding-top: 3rem;
 
 /* Profile Section */
 
+.recipe-crud-interface{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #F5F5F5;
+}
+
+.delete-recipe-btn:hover {
+    background: #FD5849;
+}
+
 .recipe-section {
-    padding-top: 3rem;
     padding-bottom: 3rem;
     background: #F5F5F5;
 }
 
-div.card {
-    z-index: 1;
-    transition: all 0.3s 0s ease-in;
-    max-width: 18.75rem;
-}
-
-.card-image-holder {
-    background: rgba(0,0,0,0.1);
-    height: 0;
-    padding-bottom: 75%;
-}
-
-.card-img {
-    max-width: 18.75rem;
-}
-
-.recipe-hr--color{
-    background: #64a19d;
-    height: 0.15rem;
+.card-img-top {
+    width: 100%;
+    height: 17.5rem;
+    object-fit: cover;
 }
 
 a.toggle-info {
@@ -10620,100 +10618,6 @@ a.toggle-info span.left {
 a.toggle-info span.right {
     left: 0.375rem;
     transform: rotate(45deg);
-}
-
-.card-flap {
-    max-height: 0;
-    overflow: hidden;
-    transform-origin: top;
-    transition: max-height 0.3s ease-out;
-}
-
-div.card-flap > p {
-    opacity: 0;
-    transition: opacity .7s ease-out;
-}
-
-div.card-flap > a {
-    opacity: 0;
-    transition: opacity .7s ease-out;
-}
-
-div.row.cards.showing > div.col-3 > div.card {
-    cursor: pointer;
-    opacity: 0.6;
-    transform: scale(0.88);
-}
-
-div.row.cards.showing > div.col-3 > div.card:hover {
-    opacity: 0.94;
-    transform: scale(0.92);
-  }
-
-div.row.cards.showing > div.col-3 > div.card.show {
-    opacity: 1 !important;
-    transform: scale(1) !important;
-}
-
-div.row.cards.showing > div.col-3 
-> div.card.show > div.card-body > a.toggle-info > span {
-    top: 1rem;
-}
-
-div.row.cards.showing > div.col-3 
-> div.card.show > div.card-body > a.toggle-info {
-    background: #FD7E72;
-}
-
-div.row.cards.showing > div.col-3 
-> div.card.show > div.card-body > a.toggle-info > span.left {
-    right: 0.65rem;
-}
-
-div.row.cards.showing > div.col-3 
-> div.card.show > div.card-body > a.toggle-info > span.right {
-    left: 0.65rem;
-}
-
-div.row.cards.showing > div.col-3 
-> div.card.show > div.card-body > div.card-flap {
-    max-height: 30rem;
-    overflow: visible;
-    transform-origin: top;
-    transition: max-height 0.5s ease-in;
-}
-
-div.row.cards.showing > div.col-3 
-> div.card.show > div.card-body > div.card-flap > p {
-    opacity: 1;
-    transition: opacity .75s ease-in;
-}
-
-div.row.cards.showing > div.col-3 
-> div.card.show > div.card-body > div.card-flap > a {
-    opacity: 1;
-    transition: opacity .8s ease-in;
-    
-}
-
-.add-recipe-card--bg-color {
-    background-color:rgba(0, 0, 0, 0.1);
-    transition: background-color .3s ease-in;
-}
-
-.add-recipe-card-hover--bg-color {
-    background-color: rgb(100,161,157);
-    cursor: pointer;
-    transition: background-color .3s ease-out;
-}
-
-.add-recipe-btn--size {
-    font-size: 6rem;
-}
-
-.add-recipe-btn-hover--color {
-    color: #F5F5F5;
-    transition: color .3s ease-in;
 }
 
 /* CRUD Recipe Form Pages */
