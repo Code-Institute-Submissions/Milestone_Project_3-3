@@ -48,7 +48,7 @@
                         <div class="collapse" id="collapse{{ loop.index }}">
                             <p class="card-text text-left">{{ recipe.step_description[0] }}</p>
                             <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-primary w-100 mb-1">Edit</a>
-                            <a href="" class="btn btn-primary w-100 mb-1 delete-recipe-btn bg-color-salamon">Delete</a>
+                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-primary w-100 mb-1 delete-recipe-btn bg-color-salamon">Delete</a>
                             <a href="#" class="btn btn-primary w-100">Read More</a>
                         </div>
 					</div>

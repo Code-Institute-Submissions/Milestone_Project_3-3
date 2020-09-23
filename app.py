@@ -76,6 +76,21 @@ class User:
 
         return jsonify({'success': 'Recipe has been added'}), 200
 
+    def update_recipe(self, recipe_id):
+        recipe = {
+            'user_id': session['user']['_id'],
+            'recipe_name': request.form.get('recipe_name').lower(),
+            'img_url': request.form.get('img_url'),
+            'ingredient_name': request.form.getlist('ingredient_name'),
+            'ingredient_amount': request.form.getlist('ingredient_amout'),
+            'unit': request.form.getlist('unit'),
+            'step_description': request.form.getlist('step_description')
+        }
+
+        recipes.update({'_id': ObjectId(recipe_id)}, recipe)
+
+        return jsonify({'success': 'Recipe has been updated'}), 200
+
 
 # Database
 app.config['MONGO_DBNAME'] = 'Recipe_Pot'
@@ -162,23 +177,27 @@ def profile_page():
 
 
 @app.route('/profile_page/signout')
+@login_required
 def sign_out():
     user = User()
     return user.signout()
 
 
 @app.route('/add_recipe/')
+@login_required
 def add_recipe():
     return render_template('add_recipe.html')
 
 
 @app.route('/add_recipe/insert_recipe', methods=['GET', 'POST'])
+@login_required
 def insert_recipe():
     user = User()
     return user.insert_recipe()
 
 
 @app.route('/edit_recipe/<recipe_id>')
+@login_required
 def edit_recipe(recipe_id):
     recipe = recipes.find_one({'_id': ObjectId(recipe_id)})
     ingredients = zip(recipe['ingredient_name'],
@@ -186,6 +205,20 @@ def edit_recipe(recipe_id):
                       recipe['unit'])
     return render_template('edit_recipe.html', user_recipe=recipe,
                            user_ingredient=ingredients)
+
+
+@app.route('/update_recipe/<recipe_id>', methods=['GET', 'POST'])
+@login_required
+def update_recipe(recipe_id):
+    User().update_recipe(recipe_id)
+    return redirect(url_for('profile_page'))
+
+
+@app.route('/delete_recipe/<recipe_id>')
+@login_required
+def delete_recipe(recipe_id):
+    recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('profile_page'))
 
 
 if __name__ == '__main__':

@@ -57,8 +57,7 @@ $("document").ready(function(){
             data: data,
             dataType: "json",
             success:     function(resp) {
-                // Getting the Current Page URL and setting it to "/profile_page/"
-                console.log(resp)
+                window.location.href = "/profile_page/"
             }
         });
 
