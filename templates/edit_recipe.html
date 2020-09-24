@@ -87,7 +87,7 @@
                 <div class="col-6 col-lg-2 mx-auto mt-3 mt-sm-2">
                   <input
                     class="contact-form-input form-control contact-form-input--style"
-                    type="text"
+                    type="number"
                     id="ingredient_amout"
                     name="ingredient_amout"
                     placeholder="amount"
@@ -96,18 +96,15 @@
                   />
                 </div>
                 <div class="col-6 col-lg-2 mx-auto mt-3 mt-sm-2">
-                  <select
-                    name="unit"
-                    id="unit"
+                  <input
                     class="form-control recipe-form-input--style"
+                    type="text"
+                    id="unit"
+                    name="unit"
+                    placeholder="Unit"
                     value="{{ingredient[2]}}"
-                  >
-                    <option value="g">g</option>
-                    <option value="kg">kg</option>
-                    <option value="ml">ml</option>
-                    <option value="dl">dl</option>
-                    <option value="l">l</option>
-                  </select>
+                    required
+                  />
                 </div>
               </div>
             </div>
@@ -187,20 +184,20 @@
       <div class="col-6 col-sm-2 mt-3 mt-sm-2">
         <input
           class="contact-form-input form-control contact-form-input--style"
-          type="text"
+          type="number"
           name="ingredient_amout"
           placeholder="amount"
           required
         />
       </div>
       <div class="col-6 col-sm-2 mt-3 mt-sm-2">
-        <select name="unit" class="form-control recipe-form-input--style">
-          <option value="g">g</option>
-          <option value="kg">kg</option>
-          <option value="ml">ml</option>
-          <option value="dl">dl</option>
-          <option value="l">l</option>
-        </select>
+        <input
+            class="form-control recipe-form-input--style"
+            type="text"
+            name="unit"
+            placeholder="Unit"
+            required
+            />
       </div>
     </div>
   </div>

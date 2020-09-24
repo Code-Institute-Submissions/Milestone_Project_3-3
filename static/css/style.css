@@ -10228,7 +10228,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 85%, #F5F5F5 98%), url(../assets/img/hero-img.jpg);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url(../assets/img/hero-img.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10274,7 +10274,7 @@ body {
 
 .about-section {
   padding-top: 3rem;
-  background: #F5F5F5;
+  background: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
 }
 
 .about-section2 .featured-text {
@@ -10305,7 +10305,7 @@ body {
 
 .signup-section {
   padding: 10rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 85%, #FD7E72 99%), url("../assets/img/bg-signup.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.5) 72%, #000 92%), url("../assets/img/bg-signup.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10367,7 +10367,7 @@ padding-top: 3rem;
 
 .footer {
   padding: 5rem 0;
-  background: #FD7E72;
+  background: #000;
 }
 
 /* Nav CSS Overwritting Template Class*/
@@ -10408,6 +10408,11 @@ padding-top: 3rem;
 
 /* Landing Page's About Section */
 
+.about-section2 {
+    padding: 10rem 0;
+}
+
+
 .about-hr--color {
   border-color: #64a19d;
   border-width: 0.25rem;
@@ -10419,7 +10424,7 @@ padding-top: 3rem;
 }
 
 .carousel .carousel-item {
-  height: 26rem;
+  height: 23rem;
 }
 
 .carousel-item img {
@@ -10427,7 +10432,8 @@ padding-top: 3rem;
     object-fit:cover;
     top: 0;
     left: 0;
-    min-height: 26rem;
+    filter: brightness(0.8);
+    min-height: 23rem;
 }
 
 .carousel-item::after {
@@ -10436,6 +10442,7 @@ padding-top: 3rem;
     position: absolute;
     top: 0;
     left: 0;
+    filter: brightness(0.8);
     width: 100%;
     height: 100%;
     content: "";
@@ -10594,9 +10601,8 @@ a.toggle-info {
     border-radius: 2.3rem;
     height: 2.3rem;
     padding: 0;
-    position: absolute;
+    position: relative;
     background: #64a19d;
-    right: 1.1rem;
     width: 2.3rem;
 }
 
@@ -10621,6 +10627,7 @@ a.toggle-info span.right {
 }
 
 /* CRUD Recipe Form Pages */
+
 
 .new-ingredient-btn {
     font-size: 3rem;
@@ -10673,4 +10680,11 @@ a.toggle-info span.right {
     display: none;
     pointer-events: none; 
     /* Can't click on it */
+}
+
+/* Recipe page */
+
+#recipe {
+    padding-top: 15rem;
+    padding-bottom: 20rem;
 }

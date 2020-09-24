@@ -203,7 +203,8 @@ def edit_recipe(recipe_id):
     ingredients = zip(recipe['ingredient_name'],
                       recipe['ingredient_amount'],
                       recipe['unit'])
-    return render_template('edit_recipe.html', user_recipe=recipe,
+    return render_template('edit_recipe.html',
+                           user_recipe=recipe,
                            user_ingredient=ingredients)
 
 
@@ -219,6 +220,13 @@ def update_recipe(recipe_id):
 def delete_recipe(recipe_id):
     recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('profile_page'))
+
+
+@app.route('/view_recipe/<recipe_id>')
+def view_recipe(recipe_id):
+    return render_template('recipe.html',
+                           recipe=recipes.find_one(
+                               {'_id': ObjectId(recipe_id)}))
 
 
 if __name__ == '__main__':
