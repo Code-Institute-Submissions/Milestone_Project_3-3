@@ -9,15 +9,7 @@
         <h2 class="text-white-50 mx-auto mt-2 mb-5">
           Use the form below to select and edit your recipe.
         </h2>
-      </div>
-      <div class="col-12">
-        <div class="mx-auto text-center">
-          <div class="scroll-downs">
-            <div class="mousey">
-              <div class="scroller"></div>
-            </div>
-          </div>
-        </div>
+        <a class="btn btn-primary js-scroll-trigger" href="#edit-recipe">Edit Recipe</a>
       </div>
     </div>
   </div>
@@ -30,7 +22,7 @@
         <hr class="about-hr--color" />
       </div>
       <div class="col-12">
-        <form class="pt-5 pb-5" id="add-recipe" name="edit-recipe" method="POST" action="{{ url_for('update_recipe', recipe_id=user_recipe._id) }}">
+        <form class="pt-5 pb-5" id="edit-recipe" name="edit-recipe" method="POST" action="{{ url_for('update_recipe', recipe_id=user_recipe._id) }}">
           <div class="form-group row text-center">
             <div class="col-12">
               <label for="recipe_name" class="text-jet">Recipe Name</label>

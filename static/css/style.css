@@ -10409,9 +10409,22 @@ padding-top: 3rem;
 /* Landing Page's About Section */
 
 .about-section2 {
-    padding: 10rem 0;
+  padding: 0rem 0;
 }
 
+@media (min-width: 576px) {
+    .about-section2 {
+    padding: 10rem 0;
+    }
+}
+
+.grow { 
+  transition: all .2s ease-in-out; 
+}
+
+div.col-12.col-lg-4.mx-auto:hover .grow {
+  transform: scale(1.2);
+}
 
 .about-hr--color {
   border-color: #64a19d;
@@ -10469,6 +10482,10 @@ padding-top: 3rem;
     background-color: #FD7E72;
 }
 
+.text-white-50 {
+    color: rgba(255,255,255,.5)!important;
+}
+
 /* Footer */
 
 .list-style-none {
@@ -10485,8 +10502,8 @@ padding-top: 3rem;
 
 .question-section {
     padding-top: 3rem;
-    background: #F5F5F5;
     padding-bottom: 3rem;
+    background: #000000;
 }
 
 .question-section .container .row .col-12 h2 {
@@ -10685,6 +10702,5 @@ a.toggle-info span.right {
 /* Recipe page */
 
 #recipe {
-    padding-top: 15rem;
-    padding-bottom: 20rem;
+    padding: 10rem 0;
 }

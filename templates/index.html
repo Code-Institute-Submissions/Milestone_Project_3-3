@@ -26,25 +26,26 @@
    <div class="container">
       <div class="row">
          <div class="col-12 col-lg-4 mx-auto">
-            <i class="fas fa-leaf about-icon--size text-white"></i>
+            <i class="fas fa-leaf about-icon--size text-white grow"></i>
             <h2 class="text-jet mb-3 mt-3 text-capitalize text-white">Easy to use.</h2>
             <hr class="about-hr--color">
             <p class="p-1 text-white-50">Recipe Pot is online cooking book Find what it has to offer, search for your favorit dish recipe.</p>
          </div>
          <div class="col-12 col-lg-4 mx-auto">
-            <i class="fas fa-file-medical about-icon--size text-white"></i>
+            <i class="fas fa-file-medical about-icon--size text-white grow"></i>
             <h2 class="text-jet mb-3 mt-3 text-capitalize text-white">Save, Share and Edit.</h2>
             <hr class="about-hr--color">
             <p class="p-1 text-white-50">You can use your profile on Recipe Pot to save, share and edit your favorite recipes.</p>
          </div>
          <div class="col-12 col-lg-4 mx-auto">
-            <i class="fas fa-user about-icon--size text-white"></i>
+            <i class="fas fa-user about-icon--size text-white grow"></i>
             <h2 class="text-jet mb-3 mt-3 text-capitalize text-white">Register Now!</h2>
             <hr class="about-hr--color">
             <p class="p-1 text-white text-white-50">Make your recipes available online for you to use on any device. All in one place.</p>
             <a class="btn btn-primary mx-auto text-capitalize mb-5 text-white" href="{{ url_for('signup_page') }}">Sign Up</a>
          </div>
       </div>
+      <img src="{{ url_for('static', filename='/assets/img/about-png.png') }}" class="img-fluid" alt="">
    </div>
 </section>
 <section class="about-section2 bg-light">
@@ -148,18 +149,18 @@
       <div class="row">
          <div class="col-12 col-lg-4 text-center">
             <img class="shadow rounded-circle img-fluid mb-3 mb-lg-5 user-img-size" src="{{ url_for('static', filename='/assets/img/user-1.jpg') }}" alt="Photo of a smiling black-haired girl with black eyes.">
-            <p class="text-gainsboro">Margaret E.</p>
-            <p class="text-gainsboro mb-5 mb-lg-2">"This is fantastic! Thanks so much guys!"</p>
+            <p class="text-white">Margaret E.</p>
+            <p class="text-white-50 mb-5 mb-lg-2">"This is fantastic! Thanks so much guys!"</p>
          </div>
          <div class="col-12 col-lg-4 text-center">
             <img class="shadow rounded-circle img-fluid mb-3 mb-lg-5 user-img-size" src="{{ url_for('static', filename='/assets/img/user-2.jpg') }}" alt="Photo of a smiling blond-haired girl with blue eyes.">
-            <p class="text-gainsboro">Sarah W.</p>
-            <p class="text-gainsboro mb-5">"Thanks so much for making these free resources available to us!"</p>
+            <p class="text-white">Sarah W.</p>
+            <p class="text-white-50 mb-5">"Thanks so much for making these free resources available to us!"</p>
          </div>
          <div class="col-12 col-lg-4 text-center">
             <img class="shadow img-fluid rounded-circle mb-3 mb-lg-5 user-img-size" src="{{ url_for('static', filename='/assets/img/user-3.jpg') }}" alt="Photo of a smiling man with a blue suit and black hair.">
-            <p class="text-gainsboro">Fred S.</p>
-            <p class="text-gainsboro mb-5">"Recipe Pot is amazing. I've been using it to create lots of super nice dish recipes"</p>
+            <p class="text-white">Fred S.</p>
+            <p class="text-white-50 mb-5">"Recipe Pot is amazing. I've been using it to create lots of super nice dish recipes"</p>
          </div>
       </div>
    </div>
