@@ -10,36 +10,41 @@
         <h2 class="text-white-50 mx-auto mt-2 mb-5">
           Bellow you will find information about this recipe.
         </h2>
-        <a class="btn btn-primary js-scroll-trigger" href="#recipe">Recipe information</a>
+        <a class="btn btn-primary js-scroll-trigger" href="#recipe-information">Recipe information</a>
       </div>
     </div>
   </div>
 </header>
 <section id="recipe">
     <div class="container">
-        <div class="row">
-            <div class="col-5 text-center p-0">
+        <div class="row bg-black">
+            <div class="col-5 text-center p-0 my-auto" id="recipe-information">
                 <img src="{{recipe.img_url}}" class="img-fluid" alt="">
             </div>
-            <div class="col-7 text-center bg-black">
-                <h2>{{recipe.recipe_name}}</h2>
-                
-                <h3>ingredients</h3>
-                <ul>
-                    <li>recipe ings</li>
-                </ul>
+            <div class="col-7 my-auto pl-0">
+                <div class="recipe-heading d-flex align-items-center">
+                    <h2 class="text-white text-capitalize mx-auto">{{recipe.recipe_name}}</h2>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <h3>Steps</h3>
-                <ul>
-                    <li>step 1</li>
+        <div class="row bg-light">
+            <div class="col-5 text-center my-auto">
+                <h3 class="text-capitalize mt-5">Ingredients</h3>
+                {% for ing in ingredients %}
+                <ul class="ingredients-list--style text-left mt-4">
+                    <li>{{ing[0]}} {{ing[1]}} {{ing[2]}}</li>
                 </ul>
+                {% endfor %}
+            </div>
+            <div class="col-7 text-center my-auto bg-cultured">
+                <h3 class="text-capitalize mt-5">Ingredients</h3>
+                {% for step in recipe.step_description %}
+                <ul class="ingredients-list--style text-left mt-4">
+                    <li>{{loop.index}}. {{ step }}</li>
+                </ul>
+                {% endfor %}
             </div>
         </div>
     </div>
 </section>
-
-
 {% endblock %}

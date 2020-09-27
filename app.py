@@ -132,6 +132,11 @@ def home_page():
     return render_template('index.html')
 
 
+@app.route('/recipes/')
+def recipes_page():
+    return render_template('recipes.html')
+
+
 @app.route('/about/')
 def about_page():
     return render_template('about.html')
@@ -224,9 +229,13 @@ def delete_recipe(recipe_id):
 
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
-    return render_template('recipe.html',
-                           recipe=recipes.find_one(
-                               {'_id': ObjectId(recipe_id)}))
+    recipe = recipes.find_one({'_id': ObjectId(recipe_id)})
+    ingredients = zip(recipe['ingredient_name'],
+                      recipe['ingredient_amount'],
+                      recipe['unit'])
+
+    return render_template('recipe.html', recipe=recipe,
+                           ingredients=ingredients)
 
 
 if __name__ == '__main__':
