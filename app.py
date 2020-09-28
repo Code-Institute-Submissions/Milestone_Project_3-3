@@ -147,6 +147,7 @@ def search_data():
                      "highlight": {"path": "recipe_name"}}},
         {"$project": {
             "_id": 1,
+            "img_url": 1,
             "recipe_name": 1,
             "ingredient_name": 1,
             "ingredient_amount": 1,
