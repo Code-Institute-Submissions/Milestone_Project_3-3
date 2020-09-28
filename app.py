@@ -6,6 +6,7 @@ from passlib.hash import pbkdf2_sha256
 from functools import wraps
 import uuid
 from bson.objectid import ObjectId
+from bson.json_util import dumps
 
 # Flask App
 
@@ -134,7 +135,29 @@ def home_page():
 
 @app.route('/recipes/')
 def recipes_page():
-    return render_template('recipes.html')
+    return render_template('recipes.html', all_recipes=recipes.find())
+
+
+@app.route('/recipes/search', methods=['GET', 'POST'])
+def search_data():
+    query_text = request.form.get('search_value')
+
+    cursor = recipes.aggregate([
+        {"$search": {"text": {"path": "recipe_name", "query": query_text},
+                     "highlight": {"path": "recipe_name"}}},
+        {"$project": {
+            "_id": 1,
+            "recipe_name": 1,
+            "ingredient_name": 1,
+            "ingredient_amount": 1,
+            "unit": 1,
+            "step_description": 1,
+            "score": {"$meta": "searchScore"}}}])
+
+    list_cursor = list(cursor)
+    json_data = dumps(list_cursor)
+
+    return json_data, 200
 
 
 @app.route('/about/')

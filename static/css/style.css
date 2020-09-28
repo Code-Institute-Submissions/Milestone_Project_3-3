@@ -10697,3 +10697,16 @@ a.toggle-info span.right {
 .modal-btn--padding {
     padding: 1rem 0.8rem;
 }
+
+.img-fit {
+    object-fit: cover;
+    width: 100%
+}
+
+/* Recipes Page */
+
+.recipes-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background: #F5F5F5;
+}
