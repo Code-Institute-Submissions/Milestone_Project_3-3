@@ -10112,7 +10112,7 @@ h3 {
   }
   .table td,
 .table th {
-    background-color: #fff !important;
+    background-color: #ffffff !important;
   }
 
   .table-bordered th,
@@ -10158,7 +10158,7 @@ body {
   padding: 0.9rem 0;
 }
 #mainNav .navbar-nav .nav-item:hover {
-  color: fade(#fff, 80%);
+  color: #ffffff;
   outline: none;
   background-color: transparent;
 }
@@ -10247,12 +10247,7 @@ body {
   font-size: 2.5rem;
   line-height: 3rem;
   letter-spacing: 0.1rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.7)));
-  background: -o-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-          background-clip: text;
+  color: #ffffff;
 }
 
 .masthead h2 {
