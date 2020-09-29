@@ -27,10 +27,10 @@ $("document").ready(function(){
                     cardTemplateCopy.find("#collapse-btn").attr("href", "#collapse" + i + 1);
                     cardTemplateCopy.find(".collapse").attr("id", "collapse" + i + 1);
                     cardTemplateCopy.find("p").text(resp[i].step_description[1]);
-                    cardTemplateCopy.find("#read-more-btn").attr("href", "/view_recipe/" + resp[i]._id["$oid"]);
+                    cardTemplateCopy.find("#read-more-btn").attr("href", "/view_recipe/" + resp[i]._id.$oid);
 
                     recipesRow.append(cardTemplateCopy);
-                };
+                }
                 
             },
             error: function (resp) {
@@ -44,10 +44,10 @@ $("document").ready(function(){
                     cardTemplateCopy.find("#collapse-btn").attr("href", "#collapse" + i + 1);
                     cardTemplateCopy.find(".collapse").attr("id", "collapse" + i + 1);
                     cardTemplateCopy.find("p").text(resp.responseJSON[i].step_description[1]);
-                    cardTemplateCopy.find("#read-more-btn").attr("href", "/view_recipe/" + resp.responseJSON[i]._id["$oid"]);
+                    cardTemplateCopy.find("#read-more-btn").attr("href", "/view_recipe/" + resp.responseJSON[i]._id.$oid);
 
                     recipesRow.append(cardTemplateCopy);
-                };
+                }
             }
         });
 

@@ -20,6 +20,6 @@ $('document').ready(function (){
             }), function (err) {
                 btn.text('SEND');
                 alert("Sending email has failed!\r\n Please try again later.\r\n Response:\n" + JSON.stringify(err));
-            }
+            };
     });
 });

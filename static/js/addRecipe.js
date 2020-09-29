@@ -11,7 +11,7 @@ $("document").ready(function(){
     ingCount++;
 
     ingredientTemplateCopy.addClass("remove" + ingCount);
-    ingredientTemplateCopy.find("p").text(ingCount + ".")
+    ingredientTemplateCopy.find("p").text(ingCount + ".");
 
     $("#ingredient-action-container").before(ingredientTemplateCopy);
     });
@@ -57,16 +57,10 @@ $("document").ready(function(){
             data: data,
             dataType: "json",
             success:     function(resp) {
-                window.location.href = "/profile_page/"
+                window.location.href = "/profile_page/";
             }
         });
 
         event.preventDefault();
     });
 });
-
-
-
-// Capital L no space
-// class names
-// q names

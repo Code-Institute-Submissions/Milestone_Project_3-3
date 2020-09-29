@@ -24,7 +24,7 @@ $("document").ready(function(){
         ingCount++;
 
         ingredientTemplateCopy.addClass("remove" + ingCount);
-        ingredientTemplateCopy.find("p").text(ingCount + ".")
+        ingredientTemplateCopy.find("p").text(ingCount + ".");
 
         $("#ingredient-action-container").before(ingredientTemplateCopy);
     });
