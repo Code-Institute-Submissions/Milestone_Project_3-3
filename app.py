@@ -142,6 +142,14 @@ def recipes_page():
 def search_data():
     query_text = request.form.get('search_value')
 
+    if not query_text:
+        cursor = recipes.find()
+
+        list_cursor = list(cursor)
+        json_data = dumps(list_cursor)
+
+        return json_data, 200
+
     cursor = recipes.aggregate([
         {"$search": {"text": {"path": "recipe_name", "query": query_text},
                      "highlight": {"path": "recipe_name"}}},
@@ -156,6 +164,15 @@ def search_data():
             "score": {"$meta": "searchScore"}}}])
 
     list_cursor = list(cursor)
+
+    if not list_cursor:
+        cursor = recipes.find()
+
+        list_cursor = list(cursor)
+        json_data = dumps(list_cursor)
+
+        return json_data, 400
+
     json_data = dumps(list_cursor)
 
     return json_data, 200

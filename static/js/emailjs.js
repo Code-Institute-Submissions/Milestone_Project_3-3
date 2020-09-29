@@ -5,8 +5,6 @@ $('document').ready(function (){
     let emailForm = $('#contactForm');
     let btn = $('#contactForm div button');
 
-    console.log($btn);
-
     emailForm.submit(function(event){
         event.preventDefault();
 

@@ -10710,3 +10710,13 @@ a.toggle-info span.right {
     padding-bottom: 5rem;
     background: #F5F5F5;
 }
+
+.spinner-border {
+    width: 8rem;
+    height: 8rem;
+    border: 0.5em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border 0.75s linear infinite;
+    animation: spinner-border 0.75s linear infinite;
+}
