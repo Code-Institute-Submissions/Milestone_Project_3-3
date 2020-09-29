@@ -133,8 +133,26 @@ def home_page():
     return render_template('index.html')
 
 
-@app.route('/recipes/')
+@app.route('/recipes/', methods=['GET', 'POST'])
 def recipes_page():
+    value_searched = request.form.get("search_value")
+    if value_searched:
+        cursor = recipes.aggregate([
+            {"$search": {"text": {"path": "recipe_name",
+                                  "query": value_searched},
+                         "highlight": {"path": "recipe_name"}}},
+            {"$project": {
+                "_id": 1,
+                "img_url": 1,
+                "recipe_name": 1,
+                "ingredient_name": 1,
+                "ingredient_amount": 1,
+                "unit": 1,
+                "step_description": 1,
+                "score": {"$meta": "searchScore"}}}])
+
+        return render_template('recipes.html', all_recipes=cursor)
+
     return render_template('recipes.html', all_recipes=recipes.find())
 
 
