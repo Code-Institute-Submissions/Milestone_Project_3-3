@@ -94,7 +94,7 @@ class User:
 
 
 # Database
-app.config['MONGO_DBNAME'] = 'Recipe_Pot'
+app.config['MONGO_DBNAME'] = os.getenv('MONGO_DBNAME')
 app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 
 mongo = PyMongo(app)
@@ -300,4 +300,4 @@ def view_recipe(recipe_id):
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'),
             port=int(os.getenv('PORT')),
-            debug=True)
+            debug=False)
