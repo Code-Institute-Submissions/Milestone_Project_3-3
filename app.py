@@ -11,7 +11,7 @@ from bson.json_util import dumps
 # Flask App
 
 app = Flask(__name__)
-app.secret_key = b'y\xe0\xa0\x1e\xf5\x83#\x90\xa7\x0f\xea\x8b\xfcf\x01*'
+app.secret_key = os.getenv('SECRET_KEY')
 
 
 # Classes
