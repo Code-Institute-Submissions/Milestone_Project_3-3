@@ -99,6 +99,8 @@ that they can view, and follow to re-create the same dish. Some of the main func
     - The project uses **Python** for routing and CRUD functionality.
 - [Github](https://www.GitHub.com)
     - The project uses **GitHub** for version control.
+- [PhotoShop](https://www.adobe.com/)
+    - The project uses **PhotoShop** for downsizing images.
 
 ## Information Architecture
 
@@ -193,7 +195,7 @@ that they can view, and follow to re-create the same dish. Some of the main func
     - Ajax allows me to 'POST' form input data to the view function.
     - Functions will receive data and run a set of commands after which I can return the results through JSON format and also return a status code based on its result.
 
-
+### Testing Deployment
 - All of the code written was tested and re-tested.
 - Defensive Design was tested by manually adding URL endpoints.
 - Login system was tested using bogus emails and passwords.
@@ -201,6 +203,70 @@ that they can view, and follow to re-create the same dish. Some of the main func
 - Login system was tested using correct emails and passwords.
 - Sign-up system was tested using different emails.
 - Search bar was tested by: using bogus input values, searching for the value that does not exist in the database, searching for the value that exists, inputting symbols, and numbers.
+
+Here is the list of all manually tested user stories:
+
+1. Page anchor tags:
+    1. Go to the "Home" page.
+    2. Try to click on the brand logo "Recipe Pot'' found in the top left corner it should reload the page.
+    3. Try to repeat the same process for all of the anchor tags present on the "Home" page, each anchor should lead to another page or its content.
+    4. Go to the "Recipes" page.
+    5. Try to click on the brand logo "Recipe Pot" found in the top left corner it should load the "Home" page.
+    6. Try to repeat the same process for all of the anchor tags present on the "Recipes" page, each anchor should lead to another page or its content.
+    7. Go to the "About" page.
+    8. Try to click on the brand logo "Recipe Pot" found in the top left corner it should load the "Home" page.
+    9. Try to repeat the same process for all of the anchor tags present on the "About" page, each anchor should lead to another page or its content.
+    10. Go to the "Contact Us" page.
+    11. Try to click on the brand logo "Recipe Pot" found in the top left corner it should load the "Home" page.
+    12. Try to repeat the same process for all of the anchor tags present on the "Contact Us" page, each anchor should lead to another page or its content.
+
+2. Navigation bar:
+    1. Go to the "Home" page. 
+    2. Try to downsize the browser window, at one point navigation links should collapse into hamburger icons.
+    3. Try to click the hamburger icon, it should open a mobile navigation menu.
+    4. Try to increase browser window size while nav is open, at one point links should go back to their initial positions.
+    
+3. Home page search button:
+    1. Go to the "Home" page.
+    2. Try to click on the input field, enter any value. 
+    3. Try to click search button on the right side of input field, it should redirect you to the "Recipes" page showing you the results of your search. 
+    3. Try to repeat the process using different values or empty fields.
+
+4. Locations page input fields:
+    1. Go to the "Locations" page.
+    2. Try to click the "search" button without any input, the website should display an alert saying "Geocode was not successful for the following reason: INVALID_REQUEST".
+    4. Try to click on the first input box and pick any of the three options.
+    5. Try to click the "search" button with just one input filled, the website should display an alert saying "Geocode was not successful for the following reason: INVALID_REQUEST".
+    6. Try to click on the second input box and type in the location of any city in Iceland.
+    7. Try to click the "search" button with both inputs filled, the website should set markers on google map, there should be a list with names of all the marked locations, attraction articles will be displayed under the map and list section.
+    8. Reload the "Locations" page this should clear all of the inputs.
+    9. Try to click on the second input filled and type in any city in Iceland.
+    10. Try to click the "search" button with just the second input filled, the website should set markers with different icons depending on location type, there should be a list with names of all the marked locations, attraction articles will be displayed under the map and list section.
+
+5. Location page buttons: 
+    1. Go to the "Locations" page.
+    2. Try to input data into both fields.
+    3. Try to click the "search" button, the website should set markers on google map, there should be a list with names of all the marked locations, attraction articles will be displayed under the map and list section.
+    5. Try to click on the "show more" button under the first article, it should reveal hidden text above the button.
+    6. Try to click again on the same button, it should hide part of the text displayed above it.
+    7. Try to repeat the clicking process for all the other "show more" buttons.
+
+6. Locations Page Markers:
+    1. Go to the "Locations" page.
+    2. Try to input data into both fields.
+    3. Try to click the "search" button, the website should set markers on google map, there should be a list with names of all the marked locations, attraction articles will be displayed under the map and list section.
+    4. Try to click any marker icon displayed on google map, it should open a "pop-up" window above it that contains place name and place rating.
+    5. Try to click on the "x" icon found in the top right corner of this "pop-up" window, this should close the window. 
+
+7. Contact Us page contact form: 
+    1. Go to the "Contact Us" page
+    2. Try to submit the empty form and verify that an error message about the required fields appears
+    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
+    4. Try to submit the form with all inputs valid and verify that a success message appears.
+
+
+Using the Bootstrap layout, and mobile fist development method, it allowed me to create a responsive website. All of the content resizes appropriately to the size of the displayed screen.
+This was tested using Google's Inspect Tool that allowed me to resize the screen and see how my website responds to different device screen sizes. 
 
 - HTML was validated using [validator.w3](https://validator.w3.org/)
   - I used HTML of deployed website inside the validator, so that I can bypass the Jinja templating syntax.
@@ -259,7 +325,7 @@ Using this IDE I was able to make my commits and push all of my code to the [Git
 
 ### Content
 
-- The text content of the two recipes presented on the website is not my creation. Recipes were created solely for educational purposes to showcase my programing logic.
+- The **text content** of the two recipes presented on the website is not my creation. Recipes were created solely for educational purposes to showcase my programing logic.
 They will be deleted.
 
 ### Media
