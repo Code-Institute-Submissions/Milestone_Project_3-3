@@ -35,6 +35,8 @@ $("document").ready(function(){
             },
             error: function (resp) {
                 recipesRow.empty();
+                let noRecipesFound = '<div class="col-12 text-center mb-5"><h2 class="text-danger">No Recipe Found</h2><p>Try searching for something else.</p></div>';
+                $("#recipe-display-row").prepend(noRecipesFound);
 
                 for (i = 0; i < resp.responseJSON.length; i++) {
                     let cardTemplateCopy = $("#card-template").clone().contents();
