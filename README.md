@@ -51,6 +51,26 @@ that they can view, and follow to re-create the same dish. Some of the main func
 
 ## Features
 
+- Overview:
+    - [Implemented] Create User Account
+    - [Implemented] Create New Recipe
+    - [Implemented] Search for Recipes
+    - [Implemented] Edit Your Recipe
+    - [Implemented] Delete Your Recipe
+
+
+- Main feature:
+    - One of the main features of this project is the search bar that allows the user to input text that is used to search, query, and display recipes to the user.
+    Search functionality is created using JavaScript ajax method to send and receive data, Flask's view function URL that receives the data, and Mongo DB aggregate search pipeline functionality that retrieves the data from the database.
+    - The second feature of this project is the login system, that together with the help of Mongo DB allows the user to create, view, edit, or delete recipes.
+    Once the user has created his account he/she can then click the "Add Recipe" button, which triggers a function that takes the user to the recipe form.
+    Once the user has filled in and submitted the form, the recipe will be added to the database. User will then be able to view the recipe on the profile page or find it using the search bar.
+
+-  Other features:
+
+    - EmailJS:
+        - The website has a contact form available, where users can use the form to send us an email. This feature was set using [EmailJS](https://www.emailjs.com/) service.
+        The user gets to fill 3 input fields, "Full Name", "Email", and "Message". Once all the input fields have been filled, the user can click the send button which takes the data and uses the EmailJS service to send us an email using the template that I have set on Emailjs to format the data accordingly. 
 
 ### Existing Features
 
@@ -60,6 +80,16 @@ that they can view, and follow to re-create the same dish. Some of the main func
 
 ## Technologies Used
 
+- [Bootstrap](https://getbootstrap.com/)
+    - The project uses **Bootstrap** to provide a responsive toolkit for building the base of the website.
+- [Fontawesome](https://fontawesome.com/)
+    - The project uses **Fontawesome** in order to use icons for the website.
+- [Fonts Google](https://fonts.google.com/)
+    - The project uses **Google Fonts** for changing the font family.
+- [JQuery](https://jquery.com)
+    - The project uses **JQuery** to simplify DOM manipulation.
+- [EmaiJS](https://www.emailjs.com/)
+    - The project uses **EmailJS** to provide service for sending emails from the website.
 
 ## Testing
 
@@ -74,6 +104,6 @@ that they can view, and follow to re-create the same dish. Some of the main func
 
 
 ### Media
-
+- The photos used in this site were obtained from [Unsplash.com](https://unsplash.com/).
 
 ### Acknowledgements
